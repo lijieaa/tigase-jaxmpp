@@ -1,0 +1,23 @@
+subprojects {
+    apply plugin: 'maven-publish'
+
+
+
+    group = 'tigase'
+    version = jaxmppVersion
+
+    publishing {
+        repositories {
+            mavenLocal()
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.tigase.org" }
+        maven { url "http://build.xmpp-test.net/maven/" }
+        jcenter()
+    }
+}
